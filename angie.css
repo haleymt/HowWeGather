@@ -1,6 +1,7 @@
 body {
   height: 100%;
   width: 100%;
+  background: #fbfaf3;
 }
 
 #main {
@@ -93,6 +94,7 @@ a {
   overflow: hidden;
   height: calc(100vh - 150px);
   width: calc(100vw - 150px);
+  text-align: center;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
@@ -109,6 +111,11 @@ a {
 iframe {
   height: calc(100vh - 150px);
   width: calc(100vw - 150px);
+
+  -webkit-animation-name: easeIn;
+  animation-name: easeIn;
+  -webkit-animation-duration: 0.8s;
+  animation-duration: 0.8s;
 }
 
 @keyframes fadeInUp {
@@ -162,5 +169,26 @@ iframe {
   to {
     height: calc(100vh - 200px);
     width: calc(100vw - 200px);
+  }
+}
+
+@keyframes easeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+@-webkit-keyframes easeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
   }
 }
