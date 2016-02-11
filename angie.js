@@ -25,12 +25,12 @@ $.extend(Viewer.prototype, {
 
     $('#overlay1').on('click', function(e) {
       e.stopPropagation();
-      downloadFile("pdfs/how-we-gather1.pdf");
+      downloadFile("pdfs/how-we-gather.pdf", "how_we_gather");
     });
 
     $('#overlay2').on('click', function(e) {
       e.stopPropagation();
-      downloadFile("pdfs/how-we-gather2.pdf");
+      downloadFile("pdfs/something-more.pdf", "something_more");
     });
 
     $('.download-button').click(function(e) {
@@ -40,7 +40,7 @@ $.extend(Viewer.prototype, {
   },
 });
 
-function downloadFile(file) {
+function downloadFile(file, title) {
   var isChrome = navigator.userAgent.toLowerCase().indexOf('chrome') > -1;
   var isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
   var isSafari = navigator.userAgent.toLowerCase().indexOf('safari') > -1;
@@ -48,7 +48,7 @@ function downloadFile(file) {
 
   if (isChrome || isFirefox) {
     var link = document.createElement('a');
-    link.download = "how_we_gather";
+    link.download = title;
     link.href = downloadUrl;
     document.body.appendChild(link);
     link.click();
